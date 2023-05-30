@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Expense Tracker</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="expense-tracker">
+        <form id="expense-form">
+          <div>
+            <label for="expense-amount">Amount:</label>
+            <div class="input-wrapper">
+              <span class="currency-symbol">₹</span>
+              <input type="number" id="expense-amount" placeholder="Enter amount" required>
+            </div>
+          </div>
+
+          <div>
+            <label for="expense-category">Category:</label>
+            <select id="expense-category" required>
+              <option value="">Select a category</option>
+              <option value="food">Food</option>
+              <option value="transportation">Transportation</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="expense-description">Description:</label>
+            <input type="text" id="expense-description" required>
+          </div>
+
+          <div>
+            <button type="submit">Add Expense</button>
+          </div>
+        </form>
+
+        <div id="expense-list">
+          <!-- Dynamically generated expense entries will be inserted here -->
+        </div>
+
+        <div id="expense-summary">
+          <p>Total Expenses: <span id="total-expenses">0</span></p>
+        </div>
+        
+        <button id="check-stats-button">Check Stats</button>
+      </div>
+
+      <div id="chart-container" class="chart-container">
+        <canvas id="expense-chart"></canvas>
+      </div>
+      
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
